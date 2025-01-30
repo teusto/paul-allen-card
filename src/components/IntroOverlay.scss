@@ -1,0 +1,47 @@
+@use '../styles/_colors' as colors;
+@use '../styles/_fonts' as fonts;
+
+.intro_overlay {
+    height: 100vh;
+    overflow: hidden;
+
+    .top {
+        height: 50vh;
+        width: 100%;
+        background-color: colors.$black;
+
+        .overlay_top {
+            color: colors.$white;
+            font-size: 36px;
+
+            h2 {
+                margin-left: 2rem;
+                margin-top: 0;
+                font-size: 2.5rem;
+                line-height: 4rem;
+                font-weight: 700;
+                z-index: 10;
+                color: colors.$white;
+                mix-blend-mode: difference;
+                font-family: 'Copperplate Gothic Std 31 BC';
+                .line{
+                    margin-bottom: 8px;
+                    height: 56px;
+                    position: relative;
+                    overflow: hidden;
+                    span{
+                        position: absolute;
+                    }
+                }
+            }
+        }
+    }
+
+    .bottom {
+        height: 50vh;
+        width: 100%;
+        background-color: colors.$black;
+
+        .overlay_bottom {}
+    }
+}
