@@ -4,6 +4,8 @@
 .intro_overlay {
     height: 100vh;
     overflow: hidden;
+    position: relative;
+    z-index: 10;
 
     .top {
         height: 50vh;
@@ -23,7 +25,7 @@
                 z-index: 10;
                 color: colors.$white;
                 mix-blend-mode: difference;
-                font-family: 'Copperplate Gothic Std 31 BC';
+                font-family: 'Copperplate';
                 .line{
                     margin-bottom: 8px;
                     height: 56px;

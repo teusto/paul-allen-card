@@ -43,11 +43,94 @@
     }
 }
 
-.logo_container{
+.logo_container {
     width: 60px;
     position: absolute;
     left: 0;
-    img{
+    top: 10px;
+    z-index: 0;
+
+    &::after {
+        content: '';
+        position: absolute;
         width: 100%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        background-color: colors.$white;
+    }
+
+    img {
+        width: 100%;
+    }
+}
+
+.card_container {
+    .card {
+        width: 450px;
+        aspect-ratio: 1.75;
+        padding: .2rem .8rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        font-family: "Copperplate Gothic Std 32 BC";
+        border-radius: 2px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+        color: colors.$cardText;
+        background: colors.$cardBg;
+
+        .card_top {
+            //border: 2px solid red;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: .8rem;
+
+            .top_right {
+                //border: 2px solid red;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                span{
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .card_mid {
+            //border: 2px solid red;
+            width: 100%;
+            text-align: center;
+            font-weight: bold;
+            font-family: "Copperplate Gothic Std 31 AB";
+
+            h2 {
+                margin: 0;
+                font-size: 1rem;
+            }
+
+            p {
+                margin: 0;
+                font-size: .7rem;
+            }
+        }
+
+        .card_bottom {
+            //border: 2px solid red;
+            width: 100%;
+            display: flex;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            font-size: .8rem;
+            p{
+                span{
+                    cursor: pointer;
+                }
+            }
+        }
     }
 }
