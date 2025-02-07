@@ -13,7 +13,7 @@ const App = () => {
   console.log({animationComplete})
   return (
     <div className={styles.App}>
-      {!animationComplete && <IntroOverlay />}
+      {/* {!animationComplete && <IntroOverlay />} */}
       <Home />
     </div>
   )

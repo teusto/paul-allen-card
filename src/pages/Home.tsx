@@ -6,6 +6,7 @@ import { useGSAP } from '@gsap/react';
 import { useEffect, useRef, useState } from 'react';
 import CSSRulePlugin from 'gsap/CSSRulePlugin';
 import Logo from '../assets/logo.svg';
+import Projects from '../components/Projects';
 
 gsap.registerPlugin(useGSAP);
 
@@ -20,15 +21,15 @@ const Home = () => {
 
     useGSAP(() => {
         timeline.to(containerRef.current, { css: { visibility: 'visible', opacity: 1 }, delay: .35, duration: 5 })
-            .to(rule, { width: '0%', ease: Power2.easeInOut, duration: 2 })
-            .to(ruleLogo, { width: '0%', ease: Power2.easeInOut, duration: 2 }, "<")
-            .from(videoRef.current, { scale: 1.5, ease: Power2.easeInOut, duration: 2 }, ">-1.0")
-            .to(videoRef.current, { scale: 0, ease: Power2.easeInOut, duration: 3 }, 32)
-            .from(cardRef.current, { zIndex: -1, opacity: 1, scale: 0, ease: Power2.easeInOut, duration: 3 }, '<')
+            //.to(rule, { width: '0%', ease: Power2.easeInOut, duration: 2 })
+            //.to(ruleLogo, { width: '0%', ease: Power2.easeInOut, duration: 2 }, "<")
+            //.from(videoRef.current, { scale: 1.5, ease: Power2.easeInOut, duration: 2 }, ">-1.0")
+            //.to(videoRef.current, { scale: 0, ease: Power2.easeInOut, duration: 4 }, 32)
+            .from(cardRef.current, { zIndex: -1, opacity: 1, scale: 0, ease: Power2.easeInOut, duration: 4, x: -10 }, '<')
     })
 
     const handleHover = (ev) => {
-        scaleMovementToDegs(ev.clientX, ev.clientY)
+        //scaleMovementToDegs(ev.clientX, ev.clientY)
     }
 
     const scaleMovementToDegs = (x, y) => {
@@ -46,6 +47,7 @@ const Home = () => {
     return (
         <div className="wrapper">
             <div className="container" ref={containerRef}>
+                <Projects />
                 <div className='logo_container'>
                     <img src={Logo} />
                 </div>
@@ -58,7 +60,7 @@ const Home = () => {
                             <p>+351 932209245</p>
                             <p className='top_right'>
                                 <span>PROJECTS & EDUCATION</span>
-                                <span>download cv</span>
+                                <a href='src\assets\Matheus_CV_2025_update.pdf' download='Matheus Resume' target='_blank'>download cv</a>
                             </p>
                         </div>
                         <div className='card_mid'>

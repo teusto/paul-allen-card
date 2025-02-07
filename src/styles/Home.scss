@@ -101,9 +101,15 @@
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-
                 span {
                     cursor: pointer;
+                }
+                a{
+                    color: colors.$cardText;
+                    transition: color .6s ease-in-out;
+                    &:hover{
+                        color: colors.$orange;
+                    }
                 }
             }
         }

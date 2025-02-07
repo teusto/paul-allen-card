@@ -1,0 +1,24 @@
+@use '../styles/_colors' as colors;
+@use '../styles/_fonts' as fonts;
+
+.wrapper {
+    //border: 2px solid red;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 5;
+    width: 35vw;
+    .title {
+        color: colors.$cardText;
+        mix-blend-mode: difference;
+        font-family: 'Copperplate';
+        display: flex;
+        align-items: center;
+        .line{
+            border: 1px solid colors.$black;
+            width: 25vw;
+            height: 0;
+            margin: 0 .5rem;
+        }
+    }
+}
