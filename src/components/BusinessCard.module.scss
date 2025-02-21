@@ -1,0 +1,18 @@
+@use '../styles/_colors' as *;
+
+.wrapper {
+  position: absolute;
+  width: 450px;
+  aspect-ratio: 1.75;
+  padding: 0.2rem 0.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Copperplate Gothic Std 32 BC";
+  border-radius: 2px;
+  box-shadow: rgba(0, 0, 0, 0.21) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  color: $cardText;
+  background: $cardBg;
+}

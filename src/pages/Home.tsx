@@ -6,7 +6,8 @@ import { useGSAP } from '@gsap/react';
 import { useEffect, useRef, useState } from 'react';
 import CSSRulePlugin from 'gsap/CSSRulePlugin';
 import Logo from '../assets/logo.svg';
-import Projects from '../components/Projects';
+import PageTitle from '../components/PageTitle';
+import { NavLink } from 'react-router';
 
 gsap.registerPlugin(useGSAP);
 
@@ -47,7 +48,6 @@ const Home = () => {
     return (
         <div className="wrapper">
             <div className="container" ref={containerRef}>
-                <Projects />
                 <div className='logo_container'>
                     <img src={Logo} />
                 </div>
@@ -59,7 +59,7 @@ const Home = () => {
                         <div className='card_top'>
                             <p>+351 932209245</p>
                             <p className='top_right'>
-                                <span>PROJECTS & EDUCATION</span>
+                                <NavLink to={'/projects-education'}>PROJECTS & EDUCATION</NavLink>
                                 <a href='src\assets\Matheus_CV_2025_update.pdf' download='Matheus Resume' target='_blank'>download cv</a>
                             </p>
                         </div>
