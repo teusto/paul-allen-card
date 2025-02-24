@@ -1,0 +1,51 @@
+@use '../styles/_colors' as *;
+
+.wrapper{
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+    position: absolute;
+}
+
+.videoContainer{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    video{
+        height: 100%;
+        z-index: 11;
+    }
+
+    .first{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: $black;
+        display: flex;
+        z-index: 12;
+        left: 0;
+        top: 0;
+    }
+
+    .second{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        z-index: 11;
+        left: 0;
+        top: 0;
+    }
+
+    .third{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: $red;
+        display: flex;
+        z-index: 10;
+        left: 0;
+        top: 0;
+    }
+}

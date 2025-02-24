@@ -23,7 +23,7 @@ const BusinessCard = forwardRef(({ position, elevation, onHover, id, angle, onHo
     };
     
     const onCursorLeaves = () => {
-      onHoverExit(id);
+      onHoverExit(id, angle);
     };
 
     return (
@@ -39,7 +39,7 @@ const BusinessCard = forwardRef(({ position, elevation, onHover, id, angle, onHo
         onMouseOut={onCursorLeaves}
         ref={ref}
       >
-        {elevation}
+        {id}
       </div>
     );
   }

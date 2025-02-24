@@ -3,10 +3,9 @@ import Scene from '../assets/scene.mp4';
 import gsap from 'gsap';
 import { Power2 } from 'gsap';
 import { useGSAP } from '@gsap/react';
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import CSSRulePlugin from 'gsap/CSSRulePlugin';
 import Logo from '../assets/logo.svg';
-import PageTitle from '../components/PageTitle';
 import { NavLink } from 'react-router';
 
 gsap.registerPlugin(useGSAP);
@@ -59,7 +58,7 @@ const Home = () => {
                         <div className='card_top'>
                             <p>+351 932209245</p>
                             <p className='top_right'>
-                                <NavLink to={'/projects-education'}>PROJECTS & EDUCATION</NavLink>
+                                <NavLink to={'/projects-education'} viewTransition>PROJECTS & EDUCATION</NavLink>
                                 <a href='src\assets\Matheus_CV_2025_update.pdf' download='Matheus Resume' target='_blank'>download cv</a>
                             </p>
                         </div>
