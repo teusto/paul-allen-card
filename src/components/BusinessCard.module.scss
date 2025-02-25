@@ -1,4 +1,4 @@
-@use '../styles/_colors' as *;
+@use "../styles/_colors" as *;
 
 .wrapper {
   position: absolute;
@@ -15,4 +15,44 @@
     rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
   color: $cardText;
   background: $cardBg;
+  font-family: "Copperplate Gothic Std 32 BC";
+  cursor: pointer;
+
+  .top {
+    //border: 2px solid red;
+    width: 100%;
+    font-size: 0.8rem;
+    text-align: right;
+  }
+  .mid {
+    //border: 2px solid red;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.25rem;
+  }
+  .bottom {
+    //border: 2px solid red;
+    width: 100%;
+    text-align: center;
+    ul {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .tool {
+        display: flex;
+        align-items: center;
+        span {
+          font-size: 0.8rem;
+        }
+        div {
+          border: 1px solid $black;
+          width: 10px;
+          height: 0;
+          margin: 0 0.25rem;
+        }
+      }
+    }
+  }
 }

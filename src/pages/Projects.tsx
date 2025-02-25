@@ -11,18 +11,18 @@ const Projects = () => {
   const [renderOpening, setRenderOpening] = useState(false);
 
   const animateHover = (businessCardID: number) => {
-    console.log({businessCardID})
+    console.log({ businessCardID });
     gsap.to(businessCardUniqueRef.current[businessCardID], {
       ease: Power4.easeInOut,
       rotate: "0deg",
       duration: 1,
     });
-    let copy = businessCardUniqueRef.current.slice(); 
+    let copy = businessCardUniqueRef.current.slice();
     let a = copy.splice(businessCardID, 1);
     console.log({ a, businessCardUniqueRef, copy });
     gsap.to([copy], {
-      backgroundColor: "#00000010",
-      filter: "blur(.1rem)",
+      backgroundColor: "#00000005",
+      filter: "blur(.25rem)",
       ease: Power4.easeInOut,
       duration: 1,
       stagger: 0.1,
@@ -31,11 +31,23 @@ const Projects = () => {
 
   const animateExitHover = (businessCardID: number, deg: number) => {
     // study on how to give a name to the animation and here simple do somethin like animation.revert() or use timeline and timestamps
-    console.log(businessCardUniqueRef.current[businessCardID], businessCardID, 'hover')
+    console.log(
+      businessCardUniqueRef.current[businessCardID],
+      businessCardID,
+      "hover"
+    );
     let copy = businessCardUniqueRef.current.slice();
     let a = copy.splice(businessCardID, 1);
-    gsap.to(businessCardUniqueRef.current[businessCardID], {ease: "back.out", rotate: `${deg}deg`, duration: .5})
-    gsap.to([copy], {ease: "back.out", backgroundColor: '#fefbfa', filter: 'blur(0)'})
+    gsap.to(businessCardUniqueRef.current[businessCardID], {
+      ease: "back.out",
+      rotate: `${deg}deg`,
+      duration: 0.5,
+    });
+    gsap.to([copy], {
+      ease: "back.out",
+      backgroundColor: "#fefbfa",
+      filter: "blur(0)",
+    });
   };
 
   const animateClick = (businessCardID: number) => {};
@@ -65,6 +77,11 @@ const Projects = () => {
             onHoverExit={animateExitHover}
             id={0}
             angle="10deg"
+            info={{
+              links: { github: "https://github.com/teusto/harvestmoo" },
+              title: "Harvest DAO",
+              stack: ["Blockchain", "React", "Sass", "Web3", "DAO"],
+            }}
           />
           <BusinessCard
             ref={(r) => (businessCardUniqueRef.current[1] = r)}
@@ -74,6 +91,11 @@ const Projects = () => {
             onHoverExit={animateExitHover}
             id={1}
             angle="-5deg"
+            info={{
+              links: { github: "https://github.com/teusto/whosknock" },
+              title: "WhosKnocks",
+              stack: ["Blockchain", "React", "Sass", "Web3", "ZKP", "Nx"],
+            }}
           />
           <BusinessCard
             ref={(r) => (businessCardUniqueRef.current[2] = r)}
@@ -83,6 +105,11 @@ const Projects = () => {
             onHoverExit={animateExitHover}
             id={2}
             angle="-20deg"
+            info={{
+              links: { github: "https://github.com/teusto/portfolio" },
+              title: "This Portfolio",
+              stack: ["React", "Sass", "gsap"],
+            }}
           />
           <BusinessCard
             ref={(r) => (businessCardUniqueRef.current[3] = r)}
@@ -91,6 +118,11 @@ const Projects = () => {
             onHover={animateHover}
             onHoverExit={animateExitHover}
             id={3}
+            info={{
+              links: { github: "https://github.com/teusto/whosknock" },
+              title: "Lara Holistic Website",
+              stack: ["React", "Sass", "GSAP"],
+            }}
           />
         </div>
       </div>
