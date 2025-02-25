@@ -19,6 +19,7 @@ interface IBusinessCard {
   elevation: number;
   onHover: (x: number) => void;
   onHoverExit: (x: number) => void;
+  onClick: (x: number) => void;
   id: number;
   angle?: string;
   info?: infoType;
@@ -34,6 +35,7 @@ const BusinessCard = forwardRef(
       angle,
       onHoverExit,
       info,
+      onClick
     }: IBusinessCard,
     ref
   ) => {
@@ -44,6 +46,10 @@ const BusinessCard = forwardRef(
     const onCursorLeaves = () => {
       onHoverExit(id, angle);
     };
+
+    const onCursorClick = () => {
+      onClick(id);
+    }
 
     return (
       <div
@@ -56,6 +62,7 @@ const BusinessCard = forwardRef(
         className={styles.wrapper}
         onMouseEnter={onCursorEnter}
         onMouseOut={onCursorLeaves}
+        onClick={onCursorClick}
         ref={ref}
       >
         <div className={styles.top}>{info?.links.github}</div>
@@ -64,8 +71,8 @@ const BusinessCard = forwardRef(
           <ul>
             {info?.stack.map((tool, index) => {
               return (
-                <div className={styles.tool}>
-                  <span key={index}>{tool}</span>
+                <div key={index} className={styles.tool}>
+                  <span>{tool}</span>
                   {index !== info?.stack.length - 1 && <div />}
                 </div>
               );

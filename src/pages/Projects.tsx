@@ -5,10 +5,13 @@ import styles from "../styles/Projects.module.scss";
 import PageTitle from "../components/PageTitle";
 import BusinessCard from "../components/BusinessCard";
 import PageTransition from "../components/PageTransition";
+import Descriptions from "../components/Descriptions";
 
 const Projects = () => {
   const businessCardUniqueRef = useRef([]);
-  const [renderOpening, setRenderOpening] = useState(false);
+  const descriptionsRef = useRef([]);
+  const [renderOpening, setRenderOpening] = useState(true);
+  const [showDescriptions, setShowDescriptions] = useState(false);
 
   const animateHover = (businessCardID: number) => {
     console.log({ businessCardID });
@@ -48,9 +51,13 @@ const Projects = () => {
       backgroundColor: "#fefbfa",
       filter: "blur(0)",
     });
+    setShowDescriptions(false);
   };
 
-  const animateClick = (businessCardID: number) => {};
+  const animateClick = (businessCardID: number) => {
+    console.log('clicked');
+    setShowDescriptions(true);
+  };
 
   const setAnimationEnd = () => {
     setRenderOpening(!renderOpening);
@@ -60,12 +67,15 @@ const Projects = () => {
     console.log("changing value of rendering", renderOpening);
   }, [renderOpening]);
 
+  console.log({descriptionsRef})
+
   return (
     <>
       {renderOpening && <PageTransition setStatus={setAnimationEnd} />}
       <div className={styles.wrapper}>
         <div className={styles.container}>
           <PageTitle />
+          {showDescriptions && <Descriptions ref={descriptionsRef}/>}
           <div className={styles.logoContainer}>
             <img src={Logo} />
           </div>
@@ -75,6 +85,7 @@ const Projects = () => {
             elevation={1}
             onHover={animateHover}
             onHoverExit={animateExitHover}
+            onClick={animateClick}
             id={0}
             angle="10deg"
             info={{
@@ -89,6 +100,7 @@ const Projects = () => {
             elevation={2}
             onHover={animateHover}
             onHoverExit={animateExitHover}
+            onClick={animateClick}
             id={1}
             angle="-5deg"
             info={{
@@ -103,6 +115,7 @@ const Projects = () => {
             elevation={3}
             onHover={animateHover}
             onHoverExit={animateExitHover}
+            onClick={animateClick}
             id={2}
             angle="-20deg"
             info={{
@@ -117,6 +130,7 @@ const Projects = () => {
             elevation={4}
             onHover={animateHover}
             onHoverExit={animateExitHover}
+            onClick={animateClick}
             id={3}
             info={{
               links: { github: "https://github.com/teusto/whosknock" },

@@ -21,10 +21,10 @@ const Home = () => {
 
     useGSAP(() => {
         timeline.to(containerRef.current, { css: { visibility: 'visible', opacity: 1 }, delay: .35, duration: 5 })
-            //.to(rule, { width: '0%', ease: Power2.easeInOut, duration: 2 })
-            //.to(ruleLogo, { width: '0%', ease: Power2.easeInOut, duration: 2 }, "<")
-            //.from(videoRef.current, { scale: 1.5, ease: Power2.easeInOut, duration: 2 }, ">-1.0")
-            //.to(videoRef.current, { scale: 0, ease: Power2.easeInOut, duration: 4 }, 32)
+            .to(rule, { width: '0%', ease: Power2.easeInOut, duration: 2 })
+            .to(ruleLogo, { width: '0%', ease: Power2.easeInOut, duration: 2 }, "<")
+            .from(videoRef.current, { scale: 1.5, ease: Power2.easeInOut, duration: 2 }, ">-1.0")
+            .to(videoRef.current, { scale: 0, ease: Power2.easeInOut, duration: 4 }, 32)
             .from(cardRef.current, { zIndex: -1, opacity: 1, scale: 0, ease: Power2.easeInOut, duration: 4, x: -10 }, '<')
     })
 

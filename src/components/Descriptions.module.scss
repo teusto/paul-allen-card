@@ -1,0 +1,22 @@
+@use '../styles/_colors' as *;
+@use '../styles/_fonts' as *;
+
+.wrapper{
+    position: absolute;
+    top: 100px; // variavel que pega o valor do element page title e adiciona uns 10px
+    right: 10px;
+    bottom: 20px;
+    z-index: 5;
+    width: 35vw;
+    padding: 0 1.5rem;
+    p{
+        font-family: "Copperplate Gothic Std 32 BC";
+    }
+    img{
+        background-color: $red;
+        width: calc(100% + 3rem);
+        aspect-ratio: 9/4;
+        margin-left: -1.5rem;
+        border: none;
+    }
+}
