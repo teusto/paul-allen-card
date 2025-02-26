@@ -22,9 +22,9 @@ const Home = () => {
     useGSAP(() => {
         timeline.to(containerRef.current, { css: { visibility: 'visible', opacity: 1 }, delay: .35, duration: 5 })
             .to(rule, { width: '0%', ease: Power2.easeInOut, duration: 2 })
-            .to(ruleLogo, { width: '0%', ease: Power2.easeInOut, duration: 2 }, "<")
-            .from(videoRef.current, { scale: 1.5, ease: Power2.easeInOut, duration: 2 }, ">-1.0")
-            .to(videoRef.current, { scale: 0, ease: Power2.easeInOut, duration: 4 }, 32)
+            // .to(ruleLogo, { width: '0%', ease: Power2.easeInOut, duration: 2 }, "<")
+            // .from(videoRef.current, { scale: 1.5, ease: Power2.easeInOut, duration: 2 }, ">-1.0")
+            // .to(videoRef.current, { scale: 0, ease: Power2.easeInOut, duration: 4 }, 32)
             .from(cardRef.current, { zIndex: -1, opacity: 1, scale: 0, ease: Power2.easeInOut, duration: 4, x: -10 }, '<')
     })
 
@@ -47,16 +47,16 @@ const Home = () => {
     return (
         <div className="wrapper">
             <div className="container" ref={containerRef}>
-                <div className='logo_container'>
+                {/* <div className='logo_container'>
                     <img src={Logo} />
                 </div>
                 <div className="video_container">
                     <video ref={videoRef} className="video" src={Scene} muted autoPlay playsInline></video>
-                </div>
+                </div> */}
                 <div className='card_container' ref={cardRef} onPointerMove={handleHover} onMouseMoveCapture={handleHover} style={{transform: `translate(-50%, -50%) perspective(600px) rotateX(${degs.x}deg) rotateY(${degs.y}deg)`}}>
                     <div className='card'>
                         <div className='card_top'>
-                            <p>+351 932209245</p>
+                            <p><a href='https://wa.me/351932209245' target='_blank' rel="noopener noreferrer">+351 932209245</a></p>
                             <p className='top_right'>
                                 <NavLink to={'/projects-education'} viewTransition>PROJECTS & EDUCATION</NavLink>
                                 <a href='src\assets\Matheus_CV_2025_update.pdf' download='Matheus Resume' target='_blank'>download cv</a>
@@ -67,7 +67,7 @@ const Home = () => {
                             <p>Developer</p>
                         </div>
                         <div className='card_bottom'>
-                            <p>Lisbon, Portugal. <span>linkedin.</span> <span>pteutoscano@gmail.com</span></p>
+                            <address>Lisbon, Portugal. <span><a href='https://www.linkedin.com/in/matheus-toscano-oliveira/' target="_blank" rel="noopener noreferrer">linkedin.</a></span> <span><a href='mailto:pteutoscano@gmail.com'>pteutoscano@gmail.com</a></span></address>
                         </div>
                     </div>
                 </div>

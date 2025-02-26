@@ -23,6 +23,15 @@
     width: 100%;
     font-size: 0.8rem;
     text-align: right;
+    pointer-events: none;
+    a {
+      pointer-events: initial;
+      color: $cardText;
+      transition: color 0.4s ease-in-out;
+      &:hover {
+        color: $red;
+      }
+    }
   }
   .mid {
     //border: 2px solid red;
@@ -30,16 +39,18 @@
     text-align: center;
     font-weight: bold;
     font-size: 1.25rem;
+    pointer-events: none;
   }
   .bottom {
-    //border: 2px solid red;
     width: 100%;
     text-align: center;
+    pointer-events: none;
     ul {
       margin: 0;
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: 0;
       .tool {
         display: flex;
         align-items: center;

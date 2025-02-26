@@ -11,12 +11,12 @@
     padding: 0 1.5rem;
     p{
         font-family: "Copperplate Gothic Std 32 BC";
+        font-size: .85rem;
     }
     img{
         background-color: $red;
-        width: calc(100% + 3rem);
+        width: 100%;
         aspect-ratio: 9/4;
-        margin-left: -1.5rem;
         border: none;
     }
 }

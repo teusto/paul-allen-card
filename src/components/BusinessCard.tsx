@@ -1,11 +1,12 @@
 import { forwardRef } from "react";
 import styles from "./BusinessCard.module.scss";
 
-type position = {
+export type position = {
   top?: string;
   bottom?: string;
   left?: string;
   right?: string;
+  angle: string;
 };
 
 type infoType = {
@@ -65,7 +66,7 @@ const BusinessCard = forwardRef(
         onClick={onCursorClick}
         ref={ref}
       >
-        <div className={styles.top}>{info?.links.github}</div>
+        <div className={styles.top}><a href={info?.links.github} target='_blank' rel="noopener noreferrer">{info?.links.github}</a></div>
         <div className={styles.mid}>{info?.title}</div>
         <div className={styles.bottom}>
           <ul>

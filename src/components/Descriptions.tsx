@@ -4,17 +4,23 @@ import gsap from "gsap";
 import { useGSAP } from '@gsap/react';
 gsap.registerPlugin(useGSAP);
 
-const Descriptions = forwardRef(({}, ref) => {
+type DescriptionsProps = {
+    paragraphs: string[];
+}
+
+const Descriptions = forwardRef(({paragraphs}:DescriptionsProps, ref) => {
 
     useGSAP(() => {
         gsap.from(ref?.current?.childNodes, {ease: "power4.inOut", yPercent: 5, opacity: 0, stagger: .1})
     }, [])
 
+    console.log({paragraphs})
+
     return(
         <div className={styles.wrapper} ref={ref}>
-            <p>Tortor tincidunt commodo ac augue ligula imperdiet. Risus hac platea purus, volutpat sodales cubilia egestas. Augue lacus curae purus ridiculus etiam nibh magnis. Ligula pretium tellus sagittis class tellus mi neque. Sociosqu ante hendrerit lobortis bibendum egestas, nullam cras dictum? Facilisi consequat sociosqu posuere eget ornare imperdiet. Bibendum augue adipiscing etiam habitant eros aenean lectus. Risus sapien leo nibh malesuada phasellus dapibus.</p>
+            <p>{paragraphs[0]}</p>
             <img />
-            <p>Accumsan diam hendrerit in ligula fringilla suscipit odio. Varius aptent elit rutrum pretium vulputate posuere nullam. Cubilia facilisis a habitant dolor massa euismod.</p>
+            <p>{paragraphs[1]}</p>
         </div>
     )
 })
