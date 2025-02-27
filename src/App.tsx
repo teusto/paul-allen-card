@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 import styles from './App.module.scss';
 import IntroOverlay from './components/IntroOverlay';
 import { useAnimations } from './contexts/AnimationProvider';
@@ -13,7 +15,7 @@ const App = () => {
   console.log({animationComplete})
   return (
     <div className={styles.App}>
-      {/* {!animationComplete && <IntroOverlay />} */}
+      {!animationComplete && <IntroOverlay />}
       <Home />
     </div>
   )

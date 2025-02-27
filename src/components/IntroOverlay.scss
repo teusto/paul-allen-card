@@ -1,5 +1,6 @@
 @use '../styles/_colors' as colors;
 @use '../styles/_fonts' as fonts;
+@use '../styles/_responsive' as *;
 
 .intro_overlay {
     height: 100vh;
@@ -11,6 +12,9 @@
         height: 50vh;
         width: 100%;
         background-color: colors.$black;
+        @include mobile{
+            padding: 1rem;
+        }
 
         .overlay_top {
             color: colors.$white;
@@ -25,12 +29,20 @@
                 z-index: 10;
                 color: colors.$white;
                 mix-blend-mode: difference;
-                font-family: 'Copperplate';
+                font-family: "Copperplate Gothic Std 31 AB";
+                @include mobile{
+                    font-size: 1rem;
+                    margin-left: 0;
+                    line-height: initial;
+                }
                 .line{
                     margin-bottom: 8px;
                     height: 56px;
                     position: relative;
                     overflow: hidden;
+                    @include mobile{
+                        height: calc(1rem + 22px);
+                    }
                     span{
                         position: absolute;
                     }

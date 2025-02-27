@@ -1,4 +1,5 @@
 @use "./_colors" as colors;
+@use "./_responsive" as *;
 
 .wrapper {
   height: 100vh;
@@ -13,6 +14,9 @@
     align-items: center;
     visibility: hidden;
     opacity: 0;
+    @include mobile {
+      width: 100%;
+    }
   }
 }
 
@@ -21,8 +25,9 @@
   aspect-ratio: 16 / 7;
   position: relative;
   overflow: hidden;
-  //border: 2px solid red;
-
+  @include mobile {
+    width: 100%;
+  }
   &::after {
     content: "";
     position: absolute;
@@ -40,6 +45,11 @@
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
+    @include mobile {
+      width: 100%;
+      box-shadow: rgba(0, 0, 0, 0.181) 0px 2px 3px 0px,
+        rgba(0, 0, 0, 0.06) 0px 2px 2px 0px;
+    }
   }
 }
 
@@ -49,6 +59,9 @@
   left: 0;
   top: 10px;
   z-index: 3;
+  @include mobile {
+    @include absolute-position($left: 1%, $top: 2%);
+  }
 
   &::after {
     content: "";
@@ -72,6 +85,9 @@
   margin-right: -50%;
   transform: translate(-50%, -50%);
   z-index: 5;
+  @include mobile {
+    @include absolute-position($left: var(--translate-width), $top: 50%);
+  }
   //border: 2px solid red;
   .card {
     width: 450px;
@@ -87,7 +103,9 @@
       rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
     color: colors.$cardText;
     background: colors.$cardBg;
-
+    @include mobile {
+      width: 100%;
+    }
     .card_top {
       //border: 2px solid red;
       width: 100%;
@@ -96,12 +114,17 @@
       justify-content: space-between;
       font-size: 0.8rem;
       font-family: "Copperplate Gothic Std 32 BC";
+      margin: 0;
+      height: 20%;
+      @include mobile {
+        font-size: 0.6rem;
+      }
       .top_right {
-        //border: 2px solid red;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        margin: 0;
         span {
           cursor: pointer;
         }
@@ -121,31 +144,44 @@
       text-align: center;
       font-weight: bold;
       font-family: "Copperplate Gothic Std 31 AB";
-
+      height: 60%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
       h2 {
         margin: 0;
         font-size: 1rem;
+        @include mobile {
+          font-size: 0.7rem;
+        }
       }
 
       p {
         margin: 0;
         font-size: 0.7rem;
+        @include mobile {
+          font-size: 0.6rem;
+        }
       }
     }
 
     .card_bottom {
-      //border: 2px solid red;
       width: 100%;
       display: flex;
       text-align: center;
-      align-items: center;
+      align-items: flex-end;
       justify-content: center;
       font-size: 0.8rem;
+      height: 20%;
 
       address {
         font-family: "Copperplate Gothic Std 31 AB";
         font-size: 0.65rem;
         font-style: normal;
+        @include mobile {
+          font-size: 0.45rem;
+        }
         span {
           cursor: pointer;
           a {

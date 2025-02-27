@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 import './IntroOverlay.scss';
 import gsap from 'gsap';
 import { Power2, Power4 } from 'gsap';

@@ -16,7 +16,8 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router": "^7.2.0",
-    "react-transition-group": "^4.4.5"
+    "react-transition-group": "^4.4.5",
+    "surge": "^0.24.6"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",

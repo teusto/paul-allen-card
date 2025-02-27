@@ -1,13 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 
 const useHover = (ref?: any) => {
-    const [isHovered, setIsHovered] = useState(false);
+    const [isHovered, ] = useState(false);
     const [mousePosition, setMousePosition] = useState({ x: null, y: null });
     const genericRef = useRef(ref || null);
 
     useEffect(() => {
         console.log(genericRef)
-        const updateMousePosition = (ev) => {
+        const updateMousePosition = (ev:any) => {
             setMousePosition({
                 x: ev.clientX,
                 y: ev.clientY

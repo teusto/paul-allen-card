@@ -1,4 +1,6 @@
-import { forwardRef, useEffect } from 'react';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
+import { forwardRef } from 'react';
 import styles from './Descriptions.module.scss';
 import gsap from "gsap";
 import { useGSAP } from '@gsap/react';

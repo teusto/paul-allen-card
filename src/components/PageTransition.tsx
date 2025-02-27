@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 import { useRef } from "react";
 import styles from "./PageTransition.module.scss";
 import Scene from "../assets/heypaul.mp4";

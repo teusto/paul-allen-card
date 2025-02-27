@@ -1,5 +1,6 @@
-@use '../styles/_colors' as colors;
+@use '../styles/_colors' as *;
 @use '../styles/_fonts' as fonts;
+@use '../styles/_responsive' as *;
 
 .wrapper {
     //border: 2px solid red;
@@ -8,17 +9,31 @@
     right: 10px;
     z-index: 5;
     width: 35vw;
+    @include mobile {
+        width: 100%;
+        position: static;
+        text-align: center;
+    }
     .title {
-        color: colors.$cardText;
+        color: $cardText;
         mix-blend-mode: difference;
         font-family: 'Copperplate';
         display: flex;
         align-items: center;
+        @include mobile {
+            font-size: 1rem;
+            justify-content: center;
+            background-color: $cardBg;
+            padding: .5rem;
+        }
         .line{
-            border: 1px solid colors.$black;
+            border: 1px solid $black;
             width: 25vw;
             height: 0;
             margin: 0 .5rem;
+            @include mobile {
+                width: 5%;
+            }
         }
     }
 }

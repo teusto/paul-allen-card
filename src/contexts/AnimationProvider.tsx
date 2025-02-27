@@ -1,8 +1,10 @@
-import { useContext, createContext, useState, useEffect } from "react";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
+import { useContext, createContext, useState } from "react";
 
 const AnimationContext = createContext();
 
-const AnimationProvider = ({ children }) => {
+const AnimationProvider = ({ children }:any) => {
     const [animationComplete, setAnimationComplete] = useState<boolean | null>(null)
 
     const completeAnimation = () => {

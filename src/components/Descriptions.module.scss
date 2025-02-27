@@ -1,5 +1,6 @@
 @use '../styles/_colors' as *;
 @use '../styles/_fonts' as *;
+@use '../styles/_responsive' as *;
 
 .wrapper{
     position: absolute;
@@ -9,6 +10,9 @@
     z-index: 5;
     width: 35vw;
     padding: 0 1.5rem;
+    @include mobile {
+        @include absolute-position($left: 0%, $top: 0%);
+      }
     p{
         font-family: "Copperplate Gothic Std 32 BC";
         font-size: .85rem;
